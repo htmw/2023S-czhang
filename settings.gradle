@@ -1,0 +1,2 @@
+rootProject.name = "Gsorting"
+include ':app'
