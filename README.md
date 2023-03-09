@@ -1,7 +1,7 @@
 **GSorting - Pace University Capstone Project**
 ===================================================
 
-![images](https://s2.loli.net/2023/03/09/WpcuLZxDNehbBJz.jpg)
+![images](https://s2.loli.net/2023/03/09/ZGFlIx5NR97js21.jpg)
 
 **Project Description** 
 =======================
