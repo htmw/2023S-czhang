@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="type">
-        <item >wet garbage</item>
-        <item >dry refuse</item>
-        <item >recyclables</item>
-        <item >harmful</item>
-    </string-array>
-</resources>
