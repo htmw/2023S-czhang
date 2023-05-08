@@ -311,7 +311,7 @@ public class HomeFragment extends Fragment {
             switch (msg.what) {
                 case -2://识别失败，可能上传图片太大了
                     progressDialog.dismiss();
-                    Toast.makeText(myActivity,(String)msg.obj, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(myActivity,getText( R.string.text_home_failed), Toast.LENGTH_SHORT).show();
                     break;
                 case -1://失败
                     rvList.setVisibility(View.GONE);
@@ -327,7 +327,7 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(myActivity, getText(R.string.text_home_succeed), Toast.LENGTH_SHORT).show();
                     break;
                 case 1://垃圾分类识别--文字
-                    String url = "http://apis.juhe.cn/voiceRubbish/search";
+                    String url = "http://127.0.0.1/search";
                     Map<String, Object> map = new HashMap<>();
                     map.put("type", 1);//1:模糊 2:精确，默认1
                     map.put("q", contentStr);
@@ -362,7 +362,7 @@ public class HomeFragment extends Fragment {
                     });
                     break;
                 case 2://图片识别
-                    String pictureUrl = "http://apis.juhe.cn/voiceRubbish/imgDisti";
+                    String pictureUrl = "http://127.0.0.1/imgDisti";
                     Map<String, Object> pictureMap = new HashMap<>();
                     pictureMap.put("type", 1);//1:模糊 2:精确，默认1
                     pictureMap.put("image", Base64Util.imageToBase64(imagePath));
@@ -391,17 +391,14 @@ public class HomeFragment extends Fragment {
                                                     message.what = -1;
                                                 }
                                             } else {
-                                                message.obj = reason;
                                                 message.what = -2;
                                             }
 
                                         } catch (JSONException e) {
-                                            message.obj = e.toString();
                                             message.what = -2;
                                             e.printStackTrace();
                                         }
                                     } else {
-                                        message.obj = "Error code " + responseCode;
                                         message.what = -2;
                                     }
                                     handler.sendMessage(message);
